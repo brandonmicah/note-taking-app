@@ -134,6 +134,7 @@ h2 {
   border: 1px solid black;
   height: 20rem;
   background-color: lightyellow;
+  position: relative;
 }
 
 .note-text {
@@ -142,4 +143,21 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 900;
+  color: red;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  color: black;
 }

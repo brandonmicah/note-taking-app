@@ -10,36 +10,24 @@
   <body>
     <main>
       <div class="container">
-          <h1>Note Taker</h1>
-          <h2>Add a new note:</h2>
-          <div class="text-area-div">
-              <label for="textArea">Note:</label>
-              <textarea class="text-area" name="text-area" id="textArea cols="30" rows="10"></textarea>
+        <h1>Note Taker</h1>
+        <h2>Add a new note:</h2>
+        <div class="text-area-div">
+          <label for="textArea">Note:</label>
+          <textarea
+            class="text-area"
+            name="text-area"
+            id="textArea"
+            rows="10"
+          ></textarea>
+        </div>
+        <button class="add-note-btn" id="addNoteBtn">Add Note</button>
+        <div class="note-grid" id="noteGrid">
+          <div class="grid-item-1 note" id="gridItem1">
+            <p class="note-text">Try adding a note!</p>
+            <div class="delete-btn" id="deleteBtn">X</div>
           </div>
-          <button class="add-note-btn" id="addNoteBtn
-          ">Add Note</button>
-          <div class="note-grid">
-            <div class="grid-item-1 note" id="gridItem1">
-                <p class="note-text">Try adding a note!</p>
-            </div>
-            <div class="grid-item-2 note" id="gridItem2"><p class="note-text">Try adding a note!</p></div>
-            <div class="grid-item-3 note" id="gridItem3">
-                <p class="note-text">Try adding a note!</p>
-            </div>
-            <div class="grid-item-4 note" id="gridItem4">
-                <p class="note-text">Try adding a note!</p>
-            </div>
-            <div class="grid-item-5 note" id="gridItem5">
-                <p class="note-text">Try adding a note!</p>
-            </div>
-            <div class="grid-item-6 note" id="gridItem6">
-                <p class="note-text">Try adding a note!</p>
-            </div>
-            <div class="grid-item-7 note" id="gridItem7">
-                <p class="note-text">Try adding a note!</p>
-            </div>
-            <div class="grid-item-8 note" id="gridItem8"><p class="note-text">Try adding a note!</p></div>
-          </div>
+        </div>
       </div>
     </main>
     <script src="script.js"></script>
