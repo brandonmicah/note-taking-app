@@ -6,44 +6,28 @@ const addNoteBtn = document.getElementById("addNoteBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 const noteGrid = document.getElementById("noteGrid");
 const gridItem1 = document.getElementById("gridItem1");
-const gridItem2 = document.getElementById("gridItem2");
-const gridItem3 = document.getElementById("gridItem3");
-const gridItem4 = document.getElementById("gridItem4");
-const gridItem5 = document.getElementById("gridItem5");
-const gridItem6 = document.getElementById("gridItem6");
-const gridItem7 = document.getElementById("gridItem7");
-const gridItem8 = document.getElementById("gridItem8");
 
-// Functions
 function addNote() {
-  // Create Elements
-  const noteText = document.createElement("p");
-  const newDiv = document.createElement("div");
-  const deleteDiv = document.createElement("div");
-  //   Add classes to elements
-  deleteDiv.classList.add("delete-btn");
-  newDiv.classList.add("note");
-  noteText.classList.add("note-text");
-  //   Add elements as element children
-  newDiv.appendChild(deleteDiv);
-  noteGrid.appendChild(newDiv);
-  newDiv.appendChild(noteText);
-  //   Change html within new elements
-  deleteDiv.innerHTML = "X";
-  noteText.innerHTML = textArea.value;
-  //   Clear textarea after action
+  let html = `
+    <div class="grid-item-1 note" id="grid-item-1">
+        <p class="note-text">
+        ${textArea.value}
+        </p>
+        <div class="delete-btn" id="deleteBtn">
+        X
+        </div>
+    </div>
+  `;
+  noteGrid.insertAdjacentHTML("afterbegin", html);
   textArea.value = "";
-  return newDiv;
+
+  textArea.focus();
+  textArea.setSelectionRange(0, 0);
 }
 
-function removeNote() {
-  newDiv.remove();
-}
-
-function noTextAlert() {
-  alert("Please write something in the text area");
-}
-// Code
+document.body.addEventListener("click", function (e) {
+  if (e.target.id === "deleteBtn") e.target.closest(".note").remove();
+});
 
 addNoteBtn.addEventListener("click", function () {
   if (textArea.value === "") {
@@ -53,12 +37,8 @@ addNoteBtn.addEventListener("click", function () {
   }
 });
 
-deleteBtn.addEventListener("click", function () {
-  removeNote();
-});
-
 window.addEventListener("keydown", function (e) {
-  if (textArea.value === "") {
+  if (textArea.value === "" && e.key === "Enter") {
     noTextAlert();
   } else if (e.key === "Enter") {
     addNote();
